@@ -46,7 +46,7 @@
         </p>
         <div class="legal-meta">
           <span>Effective: July 21, 2026</span>
-          <span>Last updated: July 21, 2026</span>
+          <span>Last updated: October 14, 2026</span>
           <span>Package: com.arrowza.puzzlegame</span>
         </div>
       </div>
@@ -60,7 +60,7 @@
         <a href="#core-rules">3. Core game rules</a>
         <a href="#events">4. Events and timers</a>
         <a href="#virtual-items">5. Virtual items</a>
-        <a href="#rewarded-ads">6. Rewarded ads</a>
+        <a href="#rewarded-ads">6. Advertisements</a>
         <a href="#progress">7. Local progress</a>
         <a href="#fair-play">8. Fair play</a>
         <a href="#availability">9. Availability</a>
@@ -167,7 +167,7 @@
         </section>
 
         <section id="rewarded-ads">
-          <h2>6. Optional rewarded advertisements</h2>
+          <h2>6. Rewarded and interstitial advertisements</h2>
           <p>
             Arrowza may offer an optional rewarded ad in exchange for the reward shown before the ad begins.
             You are never required to watch a rewarded ad to install or open the App.
@@ -177,22 +177,36 @@
             <li>The reward is granted after the advertising SDK confirms that the reward condition was met.</li>
             <li>The App currently permits a maximum of <strong>seven rewarded ads per calendar day</strong>.</li>
             <li>A user must generally wait at least <strong>five minutes</strong> after one rewarded ad before requesting another.</li>
-            <li>The daily limit applies across rewarded-ad offers, including bonus coins and heart rewards.</li>
+            <li>The seven-per-day limit and five-minute cooldown apply across rewarded placements. The Unity version offers extra hearts and hints; older versions may offer bonus coins. The Unity defaults also limit an attempt to one rewarded extra heart and three rewarded hints.</li>
             <li>Ad availability is not guaranteed and may depend on internet access, consent status, location, demand, account review, and third-party systems.</li>
             <li>Closing an ad early, losing network access, or an ad-provider failure may prevent a reward when completion is not confirmed.</li>
           </ul>
           <p>
-            During a timed event, Arrowza may pause the event timer while a supported rewarded ad is displayed
+            During a timed event, Arrowza pauses the event timer and game audio while a supported rewarded ad is displayed
             and resume it when the ad closes.
           </p>
+          <p>Interstitial ads may appear at a completed main-level transition when you choose Next
+          Level. Default limits skip the first three completed levels, use approximately three
+          completions between opportunities, enforce at least 150 seconds between interstitials,
+          and allow at most eight per rolling hour. Interstitials are suppressed after a recent
+          rewarded ad and while victory effects/audio are playing. They are not shown on launch,
+          during a puzzle, after failure, on restart or in settings. If no ad is ready, gameplay
+          continues without waiting for an ad to load.</p>
+          <p>Watching ads never guarantees a monetary benefit. Virtual rewards have no cash value.
+          Ad availability, consent choices and SDK/account status can affect whether an offer is available.</p>
         </section>
 
         <section id="progress">
           <h2>7. Local progress and device responsibility</h2>
           <p>
-            Arrowza stores game progress locally on your device. There is currently no Arrowza account,
-            cloud backup, or cross-device sync. You are responsible for maintaining access to the device.
+            Arrowza stores game progress locally on your device. There is no Arrowza account or
+            app-managed cloud/cross-device sync. Platform backups depend on your device and operating
+            system settings and are not guaranteed. You are responsible for maintaining access to the device.
           </p>
+          <p><strong>Unity update:</strong> This version starts a new game profile at Level 1.
+            Previous Kotlin/DataStore levels, coins, daily/event results and statistics do not transfer.
+            New Unity progress, settings and rewards save normally and are not reset on every launch.
+            The update does not intentionally clear unrelated Android application data.</p>
           <p>
             Uninstalling the App, clearing storage, resetting the device, changing devices, or device failure
             may permanently erase progress, coins, rewards, settings, and statistics. We are not responsible

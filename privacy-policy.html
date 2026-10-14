@@ -46,7 +46,7 @@
         </p>
         <div class="legal-meta">
           <span>Effective: July 21, 2026</span>
-          <span>Last updated: July 21, 2026</span>
+          <span>Last updated: October 14, 2026</span>
           <span>Package: com.arrowza.puzzlegame</span>
         </div>
       </div>
@@ -77,7 +77,7 @@
           <p>
             Arrowza does not require an account and does not ask for your name, phone number,
             postal address, contacts, photos, or precise location. Game progress is stored locally.
-            The app uses Google AdMob for optional rewarded advertisements, and Google may process
+            The app uses Google AdMob for optional rewarded advertisements and limited interstitial advertisements between completed levels, and Google may process
             certain device and interaction data for advertising, analytics, and fraud prevention.
           </p>
         </div>
@@ -134,12 +134,31 @@
           </p>
         </section>
 
+        <div class="notice">
+          <strong>Unity update and local saves</strong>
+          <p>The Unity update starts a new game profile at Level 1. Progress, coins and results from
+          the previous Kotlin version are not imported. New Unity progress, settings and rewards
+          continue to save locally after the first launch; subsequent launches do not reset them.
+          The update does not intentionally clear unrelated Android application data.</p>
+        </div>
+
         <section id="advertising">
           <h2>4. Advertising and Google AdMob</h2>
           <p>
-            Arrowza uses the Google Mobile Ads SDK (Google AdMob) to provide optional rewarded ads.
-            A rewarded ad is shown only after you choose an in-app option to watch an ad in exchange
-            for the reward displayed by the App, such as a heart or bonus virtual coins.
+            Arrowza uses the Google Mobile Ads SDK (Google AdMob) for two ad formats.
+            Optional rewarded ads are shown only after you choose a clearly labelled offer.
+            In the Unity version, offers may provide an extra heart or a hint. A reward is granted
+            only when the SDK confirms completion; availability is not guaranteed. Older versions
+            may offer different virtual rewards, including coins.
+          </p>
+          <p>
+            Interstitial ads may appear when you choose Next Level after a successful main level,
+            at a natural transition. They do not appear during an active puzzle, on app launch,
+            on restart or failure, or during victory celebration effects. The Unity defaults skip
+            the first three completed levels, require approximately three completed levels between
+            opportunities, at least 150 seconds between interstitials, and at most eight per rolling
+            hour. A recent rewarded ad also suppresses interstitials. No banner covers the board.
+            If an ad is unavailable, the next level continues immediately.
           </p>
           <p>
             According to Google’s disclosures for the Google Mobile Ads SDK, the SDK may automatically
@@ -190,7 +209,7 @@
             requesting ads.
           </p>
           <p>
-            Where the App displays a “Privacy Options” control, you may use it to review or change
+            In Me, the “Privacy &amp; choices” entry appears when UMP requires a privacy-options entry point. You may use it to review or change
             available consent choices. You may also manage or reset your device’s advertising ID
             through Android settings, where supported.
           </p>
@@ -265,9 +284,11 @@
             communication may contact us so that the matter can be reviewed.
           </p>
           <p>
-            The developer is responsible for configuring the App’s Google Play target audience,
-            advertising treatment, and consent settings consistently with the audience selected for
-            release and applicable child-protection rules.
+            The Unity version is intended for users aged 13 and older and is not directed to children
+            under 13. Because this audience can include teenagers below the regional age of consent,
+            the default advertising configuration applies conservative teen/under-consent-age
+            protections and a general-audience ad-content limit. These settings do not replace
+            required age handling or the developer’s Google Play target-audience declaration.
           </p>
         </section>
 
