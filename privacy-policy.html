@@ -46,7 +46,7 @@
         </p>
         <div class="legal-meta">
           <span>Effective: July 21, 2026</span>
-          <span>Last updated: October 14, 2026</span>
+          <span>Last updated: October 15, 2026</span>
           <span>Package: com.arrowza.puzzlegame</span>
         </div>
       </div>
@@ -77,7 +77,7 @@
           <p>
             Arrowza does not require an account and does not ask for your name, phone number,
             postal address, contacts, photos, or precise location. Game progress is stored locally.
-            The app uses Google AdMob for optional rewarded advertisements and limited interstitial advertisements between completed levels, and Google may process
+            The app includes Google AdMob integration. Where advertising is enabled, it may show optional rewarded advertisements and limited interstitial advertisements between completed levels, and Google may process
             certain device and interaction data for advertising, analytics, and fraud prevention.
           </p>
         </div>
@@ -110,22 +110,25 @@
           </ul>
 
           <h3>2.2 Gameplay and preference information</h3>
-          <p>The App stores gameplay-related information locally on your device, such as:</p>
+          <p>Depending on the App version, local records can include:</p>
           <ul>
             <li>Current and completed levels;</li>
-            <li>Virtual coins, hearts, rewards, streaks, and journey progress;</li>
+            <li>Nightmare Tokens and event rewards in Unity; coins, streaks and journey progress in earlier versions;</li>
             <li>Gameplay statistics, including correct and incorrect taps, solve times, and booster usage;</li>
             <li>Completed daily challenges and events;</li>
             <li>Sound, vibration, and other in-app settings;</li>
             <li>Rewarded-ad counters and cooldown timing needed to enforce the daily limit.</li>
           </ul>
+          <p>Remaining hearts and the current puzzle attempt may be temporary and are not promised to resume after the App closes.</p>
         </section>
 
         <section id="local-storage">
           <h2>3. Local device storage</h2>
           <p>
             Arrowza is designed as an offline-first puzzle game. Gameplay data and settings are
-            stored locally on the device using Android local-storage technologies such as DataStore.
+            stored locally on the device using Unity PlayerPrefs backed by Android preferences in
+            the Unity version. Earlier Kotlin versions used Android DataStore. The Unity update
+            does not import those earlier records.
             We do not currently operate an Arrowza account server or cloud-sync service for this data.
           </p>
           <p>
@@ -145,7 +148,7 @@
         <section id="advertising">
           <h2>4. Advertising and Google AdMob</h2>
           <p>
-            Arrowza uses the Google Mobile Ads SDK (Google AdMob) for two ad formats.
+            Where advertising is enabled, Arrowza uses the Google Mobile Ads SDK (Google AdMob) for two ad formats.
             Optional rewarded ads are shown only after you choose a clearly labelled offer.
             In the Unity version, offers may provide an extra heart or a hint. A reward is granted
             only when the SDK confirms completion; availability is not guaranteed. Older versions
@@ -286,8 +289,12 @@
           <p>
             The Unity version is intended for users aged 13 and older and is not directed to children
             under 13. Because this audience can include teenagers below the regional age of consent,
-            the default advertising configuration applies conservative teen/under-consent-age
-            protections and a general-audience ad-content limit. These settings do not replace
+            the default configuration treats unknown ages as below the age of consent: UMP does
+            not request adult consent, and ad requests receive Google's child age treatment with
+            a general-audience ad-content limit. This request protection disables personalised
+            advertising and remarketing and suppresses transmission of the Android advertising ID;
+            other SDK data processing described above may still occur. This does not change the
+            App's intended 13+ audience. These settings do not replace
             required age handling or the developer’s Google Play target-audience declaration.
           </p>
         </section>
